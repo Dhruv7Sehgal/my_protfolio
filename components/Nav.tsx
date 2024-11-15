@@ -1,0 +1,58 @@
+// components/Navbar.js
+import Link from "next/link";
+import { ModeToggle } from "./Modetoggle";
+
+const Navbar = () => {
+  return (
+    <nav
+      className="shadow-md p-4 sticky top-0 z-50"
+      aria-label="Main Navigation"
+    >
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xl md:text-1xl lg:text-2xl font-sans py-2 md:py-6 lg:py-1 relative z-20 font-bold tracking-tight">
+          ShinraiDevs
+        </div>
+        <ul className="flex justify-center space-x-8">
+          <li>
+            <Link href="/" passHref>
+              <span className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xs md:text-sm lg:text-xl font-sans py-2 md:py-6 lg:py-1 relative z-20 font-bold tracking-tight">
+                Home
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" passHref>
+              <span className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xs md:text-sm lg:text-xl font-sans py-2 md:py-6 lg:py-1 relative z-20 font-bold tracking-tight">
+                About
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/services" passHref>
+              <span className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xs md:text-sm lg:text-xl font-sans py-2 md:py-6 lg:py-1 relative z-20 font-bold tracking-tight">
+                Services
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" passHref>
+              <span className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xs md:text-sm lg:text-xl font-sans py-2 md:py-6 lg:py-1 relative z-20 font-bold tracking-tight">
+                Contact
+              </span>
+            </Link>
+          </li>
+        </ul>
+        <div className="flex items-center space-x-4">
+          <Link href="/signup" passHref>
+            <span className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xs md:text-sm lg:text-xl font-sans py-2 md:py-6 lg:py-1 relative z-20 font-bold tracking-tight">
+              Sign Up
+            </span>
+          </Link>
+          <ModeToggle />
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

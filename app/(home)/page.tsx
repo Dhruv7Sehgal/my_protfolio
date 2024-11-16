@@ -2,6 +2,7 @@ import React from "react";
 
 import { BackgroundLinesDemo } from "@/components/BackgroundLinesDemo";
 import AboutUs from "./aboutus/page";
+import { WobbleCardDemo } from "@/components/WobbleCardDemo";
 
 const Page = () => {
   return (
@@ -9,6 +10,7 @@ const Page = () => {
       <section className="w-full dark:bg-black">
         <BackgroundLinesDemo />
         <AboutUs />
+        <WobbleCardDemo />
       </section>
     </>
   );

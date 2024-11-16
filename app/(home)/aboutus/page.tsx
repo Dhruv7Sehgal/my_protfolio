@@ -1,134 +1,165 @@
+"use client";
+
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
+import { motion } from "framer-motion";
 
 export default function AboutUs() {
   return (
     <>
       <main className="grid grid-rows-2 w-full">
+        {/* Section: Our Story */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 md:px-6 lg:gap-10">
             <div className="space-y-3 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              {/* Animated Heading */}
+              <motion.h2
+                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
                 Our Story
-              </h2>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              </motion.h2>
+              <motion.p
+                className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
                 Acme Inc. was founded in 2010 with the goal of revolutionizing
-                the way businesses approach technology. Over the years,
-                we&apos;ve grown into a leading provider of innovative solutions
-                that help our clients thrive in a rapidly changing digital
-                landscape.
-              </p>
+                the way businesses approach technology. Over the years, we've
+                grown into a leading provider of innovative solutions that help
+                our clients thrive in a rapidly changing digital landscape.
+              </motion.p>
             </div>
+
+            {/* Timeline Section with Animation */}
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <CalendarDaysIcon className="h-10 w-10 text-gray-500 dark:text-gray-400" />
-                <h4 className="text-lg font-medium">2010</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Acme Inc. was founded with a mission to empower businesses
-                  through innovative technology.
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <RocketIcon className="h-10 w-10 text-gray-500 dark:text-gray-400" />
-                <h4 className="text-lg font-medium">2015</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  We launched our flagship product, revolutionizing the way
-                  businesses approach digital transformation.
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <UsersIcon className="h-10 w-10 text-gray-500 dark:text-gray-400" />
-                <h4 className="text-lg font-medium">2020</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Our customer base grew to over 10,000 businesses across
-                  multiple industries.
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <AwardIcon className="h-10 w-10 text-gray-500 dark:text-gray-400" />
-                <h4 className="text-lg font-medium">2022</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Acme Inc. was recognized as one of the top technology
-                  companies in the industry.
-                </p>
-              </div>
+              {[
+                {
+                  year: "2010",
+                  icon: <CalendarDaysIcon />,
+                  text: "Acme Inc. was founded with a mission to empower businesses through innovative technology.",
+                },
+                {
+                  year: "2015",
+                  icon: <RocketIcon />,
+                  text: "We launched our flagship product, revolutionizing the way businesses approach digital transformation.",
+                },
+                {
+                  year: "2020",
+                  icon: <UsersIcon />,
+                  text: "Our customer base grew to over 10,000 businesses across multiple industries.",
+                },
+                {
+                  year: "2022",
+                  icon: <AwardIcon />,
+                  text: "Acme Inc. was recognized as one of the top technology companies in the industry.",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  className="flex flex-col items-center justify-center space-y-3 text-center"
+                  key={index}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.8, delay: index * 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <div>{item.icon}</div>
+                  <h4 className="text-lg font-medium">{item.year}</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {item.text}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* Section: Meet Our Team */}
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 md:px-6 lg:gap-10">
             <div className="space-y-3 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              {/* Animated Heading */}
+              <motion.h2
+                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
                 Meet Our Team
-              </h2>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              </motion.h2>
+              <motion.p
+                className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
+                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
                 Our team of dedicated professionals is the backbone of Acme Inc.
                 Get to know the individuals who make our company great.
-              </p>
+              </motion.p>
             </div>
+
+            {/* Team Member Cards with Animation */}
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <Avatar className="h-20 w-20">
-                  <AvatarImage alt="Jane Doe" src="/placeholder-avatar.jpg" />
-                  <AvatarFallback>DS</AvatarFallback>
-                </Avatar>
-                <h4 className="text-lg font-medium">Dhruv Sehgal</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  CEO & Co-Founder
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Dhruv is a visionary leader with a passion for driving
-                  innovation and growth.
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <Avatar className="h-20 w-20">
-                  <AvatarImage alt="John Smith" src="/placeholder-avatar.jpg" />
-                  <AvatarFallback>OW</AvatarFallback>
-                </Avatar>
-                <h4 className="text-lg font-medium">Ojusvi Wadhwa</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  CTO & Co-Founder
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Ojusvi is a technical visionary who leads our engineering team
-                  with expertise and innovation.
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <Avatar className="h-20 w-20">
-                  <AvatarImage
-                    alt="Emily Johnson"
-                    src="/placeholder-avatar.jpg"
-                  />
-                  <AvatarFallback>HHS</AvatarFallback>
-                </Avatar>
-                <h4 className="text-lg font-medium">Hamid Hussian Siddqui</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Head of Marketing
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Hamid is a marketing strategist who drives our brand and
-                  customer engagement.
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-3 text-center">
-                <Avatar className="h-20 w-20">
-                  <AvatarImage
-                    alt="Michael Brown"
-                    src="/placeholder-avatar.jpg"
-                  />
-                  <AvatarFallback>VS</AvatarFallback>
-                </Avatar>
-                <h4 className="text-lg font-medium">Vasu Singhal</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Head of Sales
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Vasu is a sales leader who helps our clients achieve their
-                  business goals.
-                </p>
-              </div>
+              {[
+                {
+                  name: "Dhruv Sehgal",
+                  title: "CEO & Co-Founder",
+                  description:
+                    "Dhruv is a visionary leader with a passion for driving innovation and growth.",
+                  initials: "DS",
+                },
+                {
+                  name: "Ojusvi Wadhwa",
+                  title: "CTO & Co-Founder",
+                  description:
+                    "Ojusvi is a technical visionary who leads our engineering team with expertise and innovation.",
+                  initials: "OW",
+                },
+                {
+                  name: "Hamid Hussian Siddqui",
+                  title: "Head of Marketing",
+                  description:
+                    "Hamid is a marketing strategist who drives our brand and customer engagement.",
+                  initials: "HHS",
+                },
+                {
+                  name: "Vasu Singhal",
+                  title: "Head of Sales",
+                  description:
+                    "Vasu is a sales leader who helps our clients achieve their business goals.",
+                  initials: "VS",
+                },
+              ].map((member, index) => (
+                <motion.div
+                  className="flex flex-col items-center justify-center space-y-3 text-center"
+                  key={index}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.8, delay: index * 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <Avatar className="h-20 w-20">
+                    <AvatarImage
+                      alt={member.name}
+                      src="/placeholder-avatar.jpg"
+                    />
+                    <AvatarFallback>{member.initials}</AvatarFallback>
+                  </Avatar>
+                  <h4 className="text-lg font-medium">{member.name}</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {member.title}
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {member.description}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -136,6 +167,8 @@ export default function AboutUs() {
     </>
   );
 }
+
+// Icon Components (same as before)
 
 function AwardIcon(props: any) {
   return (

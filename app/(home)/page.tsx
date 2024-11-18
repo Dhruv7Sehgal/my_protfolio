@@ -3,7 +3,7 @@ import React from "react";
 import { BackgroundLinesDemo } from "@/components/BackgroundLinesDemo";
 import AboutUs from "./aboutus/page";
 import { WobbleCardDemo } from "@/components/WobbleCardDemo";
-import { BentoGridDemo } from "@/components/BentoGridDemo";
+// import { BentoGridDemo } from "@/components/BentoGridDemo";
 
 const Page = () => {
   return (

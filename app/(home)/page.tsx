@@ -11,8 +11,12 @@ const Page = () => {
       <section className="w-full dark:bg-black">
         <BackgroundLinesDemo />
         <AboutUs />
-        <div className="mt-30 mb-44 ">
+        <div className="mt-36 mb-6 ">
           {/* <BentoGridDemo /> */}
+          <WobbleCardDemo />
+        </div>
+        <div className="mb-44">
+          {" "}
           <WobbleCardDemo />
         </div>
       </section>

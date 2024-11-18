@@ -61,8 +61,12 @@ const Navbar = () => {
         <div className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white  relative z-20 font-bold tracking-tight">
           ShinraiDevs
         </div>
-        <div>
+        <div
+          className="flex
+        "
+        >
           <SheetDemo />
+          <ModeToggle />
         </div>
       </div>
     </div>
